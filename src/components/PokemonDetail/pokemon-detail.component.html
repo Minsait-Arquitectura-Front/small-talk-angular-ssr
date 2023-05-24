@@ -1,0 +1,35 @@
+<div *ngIf="pokemon$ | async as pokemonData" class="pokemon-card">
+  <h3 class="pokemon-card__name">{{ pokemonData.name }}</h3>
+  
+  <div class="pokemon-card__sprites">
+    <img [src]="pokemonData.sprites.front_default" alt="Front Default" class="pokemon-card__sprite">
+    <img [src]="pokemonData.sprites.front_shiny" alt="Front Shiny" class="pokemon-card__sprite">
+    <img [src]="pokemonData.sprites.back_default" alt="Back Default" class="pokemon-card__sprite">
+    <img [src]="pokemonData.sprites.back_shiny" alt="Back Shiny" class="pokemon-card__sprite">
+  </div>
+
+  <div class="pokemon-card__additional-info">
+    <h4 class="pokemon-card__additional-info-title">Información adicional</h4>
+    <ul class="pokemon-card__attributes">
+      <li><strong>ID:</strong> {{ pokemonData.id }}</li>
+      <li><strong>Experiencia Base:</strong> {{ pokemonData.base_experience }}</li>
+      <li><strong>Altura:</strong> {{ pokemonData.height }} decímetros</li>
+      <li><strong>Peso:</strong> {{ pokemonData.weight }} hectogramos</li>
+      <li><strong>Habilidades:</strong>
+        <ul class="pokemon-card__abilities">
+          <li class="pokemon-card__ability" *ngFor="let ability of pokemonData.abilities">{{ ability.ability.name }}</li>
+        </ul>
+      </li>
+      <li><strong>Tipo(s):</strong>
+        <ul class="pokemon-card__types">
+          <li class="pokemon-card__type" *ngFor="let type of pokemonData.types">{{ type.type.name }}</li>
+        </ul>
+      </li>
+      <li><strong>Estadísticas:</strong>
+        <ul class="pokemon-card__stats">
+          <li class="pokemon-card__stat" *ngFor="let stat of pokemonData.stats">{{ stat.stat.name }}: {{ stat.base_stat }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

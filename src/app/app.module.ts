@@ -7,17 +7,21 @@ import { PokemonListComponent } from 'src/components/PokemonList/pokemon-list.co
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonItemComponent } from 'src/components/PokemonItem/pokemon-item.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CommonModule } from '@angular/common';
+import { PokemonDetal } from 'src/components/PokemonDetail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     PokemonItemComponent,
+    PokemonDetal,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

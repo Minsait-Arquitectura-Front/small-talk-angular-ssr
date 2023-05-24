@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-export interface PokemonInList {
-  name: string;
-  url: string;
-}
+import { HttpClient } from '@angular/common/http';
+import { PokemonInList } from 'src/models/PokemonApi';
 
 @Component({
   selector: 'app-pokemon-list',

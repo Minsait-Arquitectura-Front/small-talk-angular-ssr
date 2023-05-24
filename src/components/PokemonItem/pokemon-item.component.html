@@ -1,5 +1,8 @@
-<div *ngIf="pokemonData" class="pokemon-card">
-  <img [src]="pokemonData.imageUrl" alt="Pokemon Image">
-  <h3>{{ pokemonData.name }}</h3>
-  <p>{{ pokemonData.mainInfo }}</p>
+<div *ngIf="pokemonData$ | async as pokemonData" class="pokemon-card">
+  <a [routerLink]="['/pokemon', pokemonData.id]" routerLinkActive="active">
+    <img [src]="pokemonData.sprites.front_default" alt="Pokemon Image">
+    <h3>{{ pokemonData.name }}</h3>
+    <p>{{ "Height: " + pokemonData.height }}</p>
+    <p>{{ "Weight: " + pokemonData.weight }}</p>
+  </a>
 </div>
