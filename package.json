@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "build": "npm run build:ssr",
     "___SPA_COMMANDS___": "___SSR_COMMANDS___",
     "start": "ng serve",
-    "build": "ng build --configuration production",
+    "build:spa": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "___SSR_COMMANDS___": "___SSR_COMMANDS___",
     "dev:ssr": "ng run small-talk-angular-ssr:serve-ssr",
     "serve:ssr": "node dist/small-talk-angular-ssr/server/main.js",
-    "build:ssr": "ng build && ng run small-talk-angular-ssr:server",
+    "build:ssr": "ng build --configuration production && ng run small-talk-angular-ssr:server",
     "prerender": "ng run small-talk-angular-ssr:prerender"
   },
   "private": true,
