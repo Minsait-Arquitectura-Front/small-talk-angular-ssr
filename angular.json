@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pwa-small-talk-angular": {
+    "small-talk-angular-ssr": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pwa-small-talk-angular/browser",
+            "outputPath": "dist/small-talk-angular-ssr/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pwa-small-talk-angular:build:production"
+              "browserTarget": "small-talk-angular-ssr:build:production"
             },
             "development": {
-              "browserTarget": "pwa-small-talk-angular:build:development"
+              "browserTarget": "small-talk-angular-ssr:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pwa-small-talk-angular:build"
+            "browserTarget": "small-talk-angular-ssr:build"
           }
         },
         "test": {
@@ -105,7 +105,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/pwa-small-talk-angular/server",
+            "outputPath": "dist/small-talk-angular-ssr/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -127,12 +127,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "pwa-small-talk-angular:build:development",
-              "serverTarget": "pwa-small-talk-angular:server:development"
+              "browserTarget": "small-talk-angular-ssr:build:development",
+              "serverTarget": "small-talk-angular-ssr:server:development"
             },
             "production": {
-              "browserTarget": "pwa-small-talk-angular:build:production",
-              "serverTarget": "pwa-small-talk-angular:server:production"
+              "browserTarget": "small-talk-angular-ssr:build:production",
+              "serverTarget": "small-talk-angular-ssr:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -146,12 +146,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "pwa-small-talk-angular:build:production",
-              "serverTarget": "pwa-small-talk-angular:server:production"
+              "browserTarget": "small-talk-angular-ssr:build:production",
+              "serverTarget": "small-talk-angular-ssr:server:production"
             },
             "development": {
-              "browserTarget": "pwa-small-talk-angular:build:development",
-              "serverTarget": "pwa-small-talk-angular:server:development"
+              "browserTarget": "small-talk-angular-ssr:build:development",
+              "serverTarget": "small-talk-angular-ssr:server:development"
             }
           },
           "defaultConfiguration": "production"

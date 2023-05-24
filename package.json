@@ -1,5 +1,5 @@
 {
-  "name": "pwa-small-talk-angular",
+  "name": "small-talk-angular-ssr",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,10 +9,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "___SSR_COMMANDS___": "___SSR_COMMANDS___",
-    "dev:ssr": "ng run pwa-small-talk-angular:serve-ssr",
-    "serve:ssr": "node dist/pwa-small-talk-angular/server/main.js",
-    "build:ssr": "ng build && ng run pwa-small-talk-angular:server",
-    "prerender": "ng run pwa-small-talk-angular:prerender"
+    "dev:ssr": "ng run small-talk-angular-ssr:serve-ssr",
+    "serve:ssr": "node dist/small-talk-angular-ssr/server/main.js",
+    "build:ssr": "ng build && ng run small-talk-angular-ssr:server",
+    "prerender": "ng run small-talk-angular-ssr:prerender"
   },
   "private": true,
   "dependencies": {
