@@ -1,0 +1,12 @@
+<div class="pokemon-container">
+  <div *ngFor="let pokemon of pokemons">
+    <app-pokemon-item [pokemon]="pokemon"></app-pokemon-item>
+  </div>
+</div>
+
+<div class="pokemon-container__error" *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+  <button (click)="reload()">RECARGAR</button>
+</div>
+
+<button class="pokemon-container__next" (click)="nextPage()">SIGUIENTE</button>

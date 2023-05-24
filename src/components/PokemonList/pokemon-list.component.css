@@ -1,0 +1,28 @@
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-container__next {
+  margin: 30px 30px 80px 30px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+}
+
+.pokemon-container__error {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 25px;
+  padding: 30px;
+  flex-direction: column;
+}

@@ -1,0 +1,21 @@
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html,
+body,
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+  text-align: center;
+}

@@ -1,0 +1,5 @@
+<div *ngIf="pokemonData" class="pokemon-card">
+  <img [src]="pokemonData.imageUrl" alt="Pokemon Image">
+  <h3>{{ pokemonData.name }}</h3>
+  <p>{{ pokemonData.mainInfo }}</p>
+</div>
