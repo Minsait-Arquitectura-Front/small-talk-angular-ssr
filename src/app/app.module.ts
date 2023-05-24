@@ -18,7 +18,7 @@ import { PokemonDetal } from 'src/components/PokemonDetail/pokemon-detail.compon
     PokemonDetal,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
