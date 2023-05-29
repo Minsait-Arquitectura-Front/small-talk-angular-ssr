@@ -5,6 +5,7 @@ export interface PokemonListResponse {
 export interface PokemonInList {
   name: string;
   url: string;
+  isFavorite: boolean;
 }
 
 export interface Pokemon {
@@ -17,6 +18,7 @@ export interface Pokemon {
   types: PokemonType[];
   stats: Stat[];
   sprites: Sprites;
+  isFavorite: boolean;
 }
 
 export interface Ability {

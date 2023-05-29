@@ -1,8 +1,17 @@
-<div *ngIf="pokemonData$ | async as pokemonData" class="pokemon-card">
-  <a [routerLink]="['/pokemon', pokemonData.id]" routerLinkActive="active">
-    <img [src]="pokemonData.sprites.front_default" alt="Pokemon Image">
-    <h3>{{ pokemonData.name }}</h3>
-    <p>{{ "Height: " + pokemonData.height }}</p>
-    <p>{{ "Weight: " + pokemonData.weight }}</p>
+<div *ngIf="pokemonData$ | async as pokemon" class="pokemon-card">
+
+  <span 
+    class="pokemon-favorite"
+    [ngClass]="{ 'pokemon-favorite--favorite': pokemon.isFavorite || pokemonIsFavorite }"
+    (click)="markFavorite(pokemon)"
+  >
+  {{ pokemon.isFavorite || pokemonIsFavorite ? "+ FAV." : "- FAV." }}
+</span>
+
+  <a [routerLink]="['/pokemon', pokemon.id]" routerLinkActive="active">
+    <img [src]="pokemon.sprites.front_default" alt="Pokemon Image">
+    <h3>{{ pokemon.name }}</h3>
+    <p>{{ "Height: " + pokemon.height }}</p>
+    <p>{{ "Weight: " + pokemon.weight }}</p>
   </a>
 </div>
