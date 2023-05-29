@@ -23,14 +23,12 @@ export class PokemonListComponent implements OnInit {
   private loadPokemons() {
     this.pokemonService.getPokemons(this.offset, this.pageSize).subscribe({
       next: (response) => {
-        console.log(response);
         this.pokemons = [...this.pokemons, ...response.results];
       },
       error: (e) => {
         this.errorMessage = 'Error retrieving Pokémon data.';
         console.error(e);
       },
-      complete: () => console.info('complete'),
     });
   }
 
