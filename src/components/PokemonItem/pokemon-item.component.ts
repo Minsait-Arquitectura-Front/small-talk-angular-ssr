@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Pokemon, PokemonInList } from "../../models/PokemonApi";
 import { Observable } from 'rxjs';
+import { PokemonService } from 'src/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-item',
@@ -13,11 +13,13 @@ export class PokemonItemComponent implements OnInit {
 
   public pokemonData$?: Observable<Pokemon>;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private pokemonService: PokemonService,
+  ) { }
 
   public ngOnInit() {
     if (this.pokemon?.url) {
-      this.pokemonData$ = this.http.get<Pokemon>(this.pokemon.url);
+      this.pokemonData$ = this.pokemonService.getPokemonInfo(this.pokemon?.url);
     }
   }
 }

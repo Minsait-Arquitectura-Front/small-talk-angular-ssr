@@ -9,10 +9,10 @@ import { PokemonService } from 'src/services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
   public pokemons: PokemonInList[] = [];
-  public errorMessage: string = '';
+  public errorMessage = '';
 
   private readonly pageSize: number = 10;
-  private offset: number = 0;
+  private offset = 0;
 
   constructor(private pokemonService: PokemonService) {}
 
