@@ -5,7 +5,7 @@
     [ngClass]="{ 'pokemon-favorite--favorite': pokemon.isFavorite || pokemonIsFavorite }"
     (click)="markFavorite(pokemon)"
   >
-  {{ pokemon.isFavorite || pokemonIsFavorite ? "+ FAV." : "- FAV." }}
+  FAV.
 </span>
 
   <a [routerLink]="['/pokemon', pokemon.id]" routerLinkActive="active">
