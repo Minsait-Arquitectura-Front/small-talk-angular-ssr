@@ -10,6 +10,7 @@ import { PokemonItemComponent } from 'src/components/PokemonItem/pokemon-item.co
 // import { isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonDetal } from 'src/components/PokemonDetail/pokemon-detail.component';
+import { PokemonService } from 'src/services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { PokemonDetal } from 'src/components/PokemonDetail/pokemon-detail.compon
     //   registrationStrategy: 'registerWhenStable:2000'
     // }),
   ],
-  providers: [],
+  providers: [
+    PokemonService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { PokemonInList } from 'src/models/PokemonApi';
+import { PokemonService } from 'src/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -14,24 +14,23 @@ export class PokemonListComponent implements OnInit {
   private readonly pageSize: number = 10;
   private offset: number = 0;
 
-  constructor(private http: HttpClient) { }
+  constructor(private pokemonService: PokemonService) {}
 
   public ngOnInit() {
     this.loadPokemons();
   }
 
   private loadPokemons() {
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon?offset=${this.offset}&limit=${this.pageSize}`;
-    this.http.get<any>(apiUrl).subscribe({
+    this.pokemonService.getPokemons(this.offset, this.pageSize).subscribe({
       next: (response) => {
         console.log(response);
-        this.pokemons = [...this.pokemons, ...response.results]
+        this.pokemons = [...this.pokemons, ...response.results];
       },
       error: (e) => {
         this.errorMessage = 'Error retrieving Pokémon data.';
         console.error(e);
       },
-      complete: () => console.info('complete')
+      complete: () => console.info('complete'),
     });
   }
 
@@ -41,6 +40,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   public reload() {
-    window.location.reload()
+    window.location.reload();
   }
 }
